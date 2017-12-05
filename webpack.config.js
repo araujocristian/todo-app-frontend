@@ -12,9 +12,9 @@ module.exports = {
         contentBase: './public',
     },
     resolve: {
-        extensions: ['','.js', '.jsx'],
+        extensions: ['', '.js', '.jsx'],
         alias: {
-            module: __dirname + '/node_modules'
+            modules: __dirname + '/node_modules'
         }
     },
     plugins: [
@@ -29,13 +29,12 @@ module.exports = {
                 presets: ['es2015', 'react'],
                 plugins: ['transform-object-rest-spread']
             }
-        },{
+        }, {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
-        },{
-            test: /\.woff|.woff2|.tff|.eot|.svg*.*$/,
+        }, {
+            test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
             loader: 'file'
         }]
     }
-
 }
